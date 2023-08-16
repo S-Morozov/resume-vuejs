@@ -170,6 +170,7 @@ export default {
 }
 
 .icon-env {
+  margin: ;
   width: 36px;
   height: 26px;
   flex-shrink: 0;
