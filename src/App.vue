@@ -1,12 +1,9 @@
 <script>
-import navbar from "@/components/navbar.vue";
-import Navbar from "@/components/navbar.vue";
 
 
 
 export default {
   name: 'Resume',
-  components: {Navbar},
   data() {
     return {
       fullName: 'Semen Morozov',
@@ -40,21 +37,37 @@ export default {
 </script>
 
 <template>
-  <navbar/>
-
   <div class="resume">
-    <section class="header">
-      <h1>{{ fullName }}</h1>
-      <p>{{ title }}</p>
+    <div class = "left-side">
+      <div>
+        <img class = "profile-img" src="./assets/IMG_1962-removebg-preview.png"/>
+      </div>
+      <section class="header">
+        <h1>{{ fullName }}</h1>
+        <p>{{ title }}</p>
+      </section>
+
+    <section class="title-info">
+      <p>Hello! It's my resume based on Vue.Js</p>
     </section>
-    <section class="contact">
-      <h2>Contact Information</h2>
-      <ul>
-        <li>Email: {{ email }}</li>
-        <li>Phone: {{ phone }}</li>
-        <li>Website: {{ website }}</li>
-      </ul>
-    </section>
+
+      <div class="line"></div>
+
+      <section class="contact">
+
+        <ul>
+          <li> <img class="icon-env" src="../src/components/icons/envelope-icon.png">Email: {{ email }}</li>
+          <li>Phone: {{ phone }}</li>
+          <li>Website: {{ website }}</li>
+        </ul>
+
+      </section>
+    </div>
+
+
+
+
+
     <section class="experience">
       <h2>Work Experience</h2>
       <ul>
@@ -84,12 +97,83 @@ export default {
         <li v-for="skill in skills" :key="skill">{{ skill }}</li>
       </ul>
     </section>
+
+
+
   </div>
 </template>
 
 
 
 <style scoped>
+
+.resume {
+  background: linear-gradient(180deg, #1A173F 0%, rgba(156, 88, 104, 0.92) 47.19%, rgba(15, 33, 124, 0.89) 100%);
+  box-shadow: 0 9px 50px 0 rgba(112, 112, 112, 0.20);
+
+}
+
+.header h1 {
+  color: rgba(183, 175, 205, 0.41);
+  font-family: Open Sans,serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 27px; /* 135% */
+  overflow: hidden;
+}
+
+.header p {
+  color: #72C5D8;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.30);
+  font-family: PT Serif Caption,sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.left-side {
+  width: 250px;
+  height: 842px;
+  flex-shrink: 0;
+  background: linear-gradient(90deg, rgba(158, 223, 243, 0.00) 0%, rgba(141, 180, 192, 0.27) 100%);
+  backdrop-filter: blur(5px);
+}
+
+.profile-img{
+  margin: 30px;
+  width: 180px;
+  height: 220px;
+  flex-shrink: 0;
+}
+
+.title-info {
+
+  margin: 21px 19px 16px 37px;
+  width: 135px;
+  color: #DEE0DE;
+  font-family: Public Sans,sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 166.667% */
+  text-align: center;
+}
+
+.line {
+  width: 147px;
+  height: 1px;
+  margin-left: 27px;
+  margin-right: 16px;
+  background: rgba(221, 226, 237, 0.20);
+}
+
+.icon-env {
+  width: 36px;
+  height: 26px;
+  flex-shrink: 0;
+}
 
 .navbar {
   display: flex;
@@ -116,9 +200,7 @@ export default {
 }
 
 .header {
-
   color: #fff;
-  padding: 20px;
   text-align: center;
 }
 
